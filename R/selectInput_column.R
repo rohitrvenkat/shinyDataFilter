@@ -43,10 +43,7 @@ columnSelectInput <- function(inputId, label, data, selected = "", ...,
           item.data = JSON.parse(item.label);
           return '<div>' +
                    '<div><strong>' +
-                      escape(item.data.name) + ' ' +
-                      '<span style=\"opacity: 0.3;\"><code style=\"color: black;\"> ' + 
-                        item.data.datatype + 
-                      '</code></span>' + 
+                      escape(item.data.name) +
                    '</strong></div>' +
                    (item.data.label != '' ? '<div style=\"line-height: 1em;\"><small>' + escape(item.data.label) + '</small></div>' : '') + 
                  '</div>';
@@ -72,7 +69,7 @@ columnSelectInput <- function(inputId, label, data, selected = "", ...,
       }")),
       
       # sort entries
-      list(sortField = I("'value'")),
+      # list(sortField = I("'value'")),
       
       # placeholder
       if (missing(placeholder)) list() 

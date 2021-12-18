@@ -66,15 +66,13 @@ shiny_data_filter_item <- function(input, output, session, data,
   column_select_ui <- shiny::fillRow(
     flex = c(NA, 1, NA), 
     height = "40px",
-    shiny::h4(style = 'margin-right: 8px;',
-      shiny::icon("grip-vertical", class = "sortableJS-handle")),
     columnSelectInput(
       ns("column_select"),
       NULL,
       data = data,
       multiple = TRUE,
       width = '100%'),
-    shiny::h4(style = 'float: right; margin: 8px 0px 0px 8px;',
+    shiny::strong(style = 'float: right; margin: 8px 0px 0px 8px;',
       shiny::actionLink(
         ns('remove_filter_btn'),
         NULL,
@@ -82,14 +80,9 @@ shiny_data_filter_item <- function(input, output, session, data,
   
   # filter column-specific ui
   column_filter_ui <- shiny::tagList(
-    shiny::h4(
-      shiny::icon("grip-vertical", class = "sortableJS-handle"),
+    shiny::strong(
       shiny::uiOutput(ns("column_name"), inline = TRUE),
-      shiny::actionLink(
-        ns("column_select_edit_btn"),
-        NULL,
-        shiny::icon("edit")),
-      shiny::div(style = "display: inline-block; opacity: 0.3; font-style: italic;", 
+      shiny::div(style = "display: inline-block; opacity: 0.3;", 
         shiny::HTML(paste0(
           shiny::span("("),
           shiny::textOutput(ns("nrow"), inline = TRUE),
