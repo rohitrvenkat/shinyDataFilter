@@ -18,7 +18,7 @@ visualizations of each filter variable’s data qualities.
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("dgkf/shinyDataFilter")
+devtools::install_github("rohitrvenkat/shinyDataFilter")
 ```
 
 ## Example App
